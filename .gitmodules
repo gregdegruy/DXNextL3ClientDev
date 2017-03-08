@@ -1,0 +1,3 @@
+[submodule "REVIEWME-houzz-contrib/Houzz-POC"]
+	path = REVIEWME-houzz-contrib/Houzz-POC
+	url = https://gregdegruy.visualstudio.com/DefaultCollection/Partner%20Projects/_git/Houzz-POC

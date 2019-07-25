@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="css/default.css" rel="stylesheet" />
+
+    <!-- fwa_template WinJS references -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.1.0/js/base.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.1.0/js/ui.js"></script>
+
+    <script src="js/windows-options.js"></script>
+    <script src="js/windows.js"></script>
+    <!--<script data-main="windows" src="scripts/require.js"></script>-->
+
+</head>
+<body>
+    <!--Sample Page for testing Window.js
+    <br />
+    <button onclick="window.location.href = '/page2.html'">Go to Page2</button>
+    <br />
+    <canvas id="ink" Name="ink"></canvas>-->
+
+    <div id="app">
+        <div class="splitView" data-win-control="WinJS.UI.SplitView">
+            <!-- Pane area -->
+            <div>
+                <div class="header">
+                    <button class="win-splitviewpanetoggle"
+                            data-win-control="WinJS.UI.SplitViewPaneToggle"
+                            data-win-options="{ splitView: select('.splitView') }"></button>
+                    <div class="title">SplitView Pane area</div>
+                </div>
+
+                <div class="nav-commands">
+                    <div onclick="window.location.href = baseUrl + '/pages/inking-page.html'" data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Inking', icon: 'highlight'}"></div>
+                    <div onclick="window.location.href = baseUrl + '/pages/notifications-page.html'" data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Notifications', icon: 'message'}"></div>
+                    <div onclick="window.location.href = baseUrl + '/pages/secondarytile-page.html'" data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Secondary Tile Pining', icon: 'pin'}"></div>
+                    <div onclick="window.location.href = baseUrl + '/webview.html'" data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'WebView', icon: 'globe'}"></div>
+                </div>
+            </div>
+
+            <!-- Content area -->
+            <div class="contenttext">
+                <h2 class="win-h2">Future Web Apps</h2>
+                <input type="button" value="Page 2" onclick="window.location.href = baseUrl + '/pages/page2.html'" />
+                <canvas id="ink"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        WinJS.UI.processAll().done(function () {
+            var splitView = document.querySelector(".splitView").winControl;
+            new WinJS.UI._WinKeyboard(splitView.paneElement); // Temporary workaround: Draw keyboard focus visuals on NavBarCommands
+        });
+
+        document.getElementById("ink").style.display = "block";
+    </script>
+</body>
+</html>

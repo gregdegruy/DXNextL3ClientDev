@@ -1,0 +1,1 @@
+MainPackage=C:\Users\ryanlo\Documents\Visual Studio 2015\Projects\fwa-template\fwa-template\bin\Debug\fwa-template_1.0.0.0_AnyCPU_Debug.appx

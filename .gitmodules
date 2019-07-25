@@ -1,6 +1,0 @@
-[submodule "REVIEWME-houzz-contrib/Houzz-POC"]
-	path = REVIEWME-houzz-contrib/Houzz-POC
-	url = https://gregdegruy.visualstudio.com/DefaultCollection/Partner%20Projects/_git/Houzz-POC
-[submodule "REVIEWME-windowsjs-contrib/fwa-template"]
-	path = REVIEWME-windowsjs-contrib/fwa-template
-	url = https://fwa-team.visualstudio.com/DefaultCollection/_git/fwa-template

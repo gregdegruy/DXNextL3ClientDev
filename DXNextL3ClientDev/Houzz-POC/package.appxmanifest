@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="0D16BB98.Houzz" Version="1.1.7.0" Publisher="CN=FE3E18C4-6334-4E96-BD11-77D80125744C" />
+  <mp:PhoneIdentity PhoneProductId="dff20ea5-b389-4561-855a-f4bca069cedb" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>Houzz</DisplayName>
+    <PublisherDisplayName>Houzz Inc.</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.10586.0" MaxVersionTested="10.0.10586.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="http://www.houzz.com/">
+      <uap:VisualElements DisplayName="Houzz" Description="Houzz" BackgroundColor="#CCCCCC" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png">
+          <uap:TileUpdate Recurrence="halfHour" UriTemplate="http://www.houzz.com/windowsLiveTile/{language}/{region}" />
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="images\SplashScreen.png" BackgroundColor="#CCCCCC" />
+      </uap:VisualElements>
+      <uap:ApplicationContentUriRules>
+        <uap:Rule Match="http://www.microsoft.com" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="https://cdnjs.cloudflare.com" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="http://dxhostedapps.azurewebsites.net" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="http://houzz-poc.azurewebsites.net/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="https://houzz-poc.azurewebsites.net/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="ms-appx-web:///" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="http://www.houzz.com/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="https://www.houzz.com/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="http://houzzuwp.ngrok.io/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="https://houzzuwp.ngrok.io/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="http://www.stghouzz.com/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="https://www.stghouzz.com/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="http://www.houzz2.com/" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="https://www.houzz2.com/" Type="include" WindowsRuntimeAccess="all" />
+      </uap:ApplicationContentUriRules>
+      <Extensions>
+        <uap:Extension Category="windows.search" />
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="privateNetworkClientServer" />
+    <uap:Capability Name="picturesLibrary" />
+    <DeviceCapability Name="microphone" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>

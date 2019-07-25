@@ -1,0 +1,12 @@
+﻿body {
+    background-color: #007acc;
+}
+
+footer.content-container {
+    display: none;
+}
+
+html, body {
+    -ms-content-zooming: none;
+    -webkit-user-select: none;
+}

@@ -1,0 +1,88 @@
+﻿/*
+    General App Styles
+*/
+.content,
+#app {
+    height: 100%;
+}
+
+.houzz-brand-logo {
+    height: 80px;
+    width: 80px;
+
+    position: absolute !important;
+    top: 10px !important;
+}
+
+/*
+    Split View Styles
+*/
+.win-splitview-pane {
+    background-color: #CCCCCC !important;
+}
+
+.win-splitview.win-splitview-pane-closed.win-splitview-placementleft .win-splitview-pane, .win-splitview.win-splitview-pane-closed.win-splitview-placementright .win-splitview-pane {
+    width: 98px !important;
+}
+
+#app .win-splitviewpanetoggle {    
+    color: #575757;
+    margin: 25px;
+}
+
+/* SplitView pane content style*/
+#app .header {
+    white-space: nowrap;
+}
+
+#app .title {
+    font-size: 25px;
+    font-family: Segoe UI;
+    left: 50px;
+    margin-top: 6px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#app .nav-commands {
+    background-color: #ffffff !important;
+    font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial;
+    padding-bottom: 10px;
+    margin-top: 0px;
+}
+
+.win-navbarcommand-icon {
+    padding: 10px 30px;
+    background: no-repeat;
+    height: 50px !important;
+    margin-top: 0px !important;
+}
+
+.win-navbarcommand-button-content {
+    position: relative;
+    padding: 30px;
+}
+
+.win-navbarcommand-button {
+    width: 80px;
+}
+
+#app .win-splitview-pane-hidden .win-navbarcommand-button {
+    width: 46px;
+}
+/* 
+    Workaround: Make sure pane doesn't scroll if ContentDialog restores focus to
+    NavBarCommand's label
+*/
+#app .win-splitview-pane-hidden .win-navbarcommand-label {
+    visibility: hidden;
+}
+
+#app .contenttext {
+    margin-left: 20px;
+    margin-top: 6px;
+}
+
+/*.win-splitview-panewrapper {
+    width: 900px !important;
+}*/

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/msapp-error.css" />
+    <script src="js/msapp-error.js"></script>
+
+    <script>
+        if (window.Windows) {
+            var updateOnlineStatus = function (e) {
+                history.back();
+                if (history.length == 1)
+                    window.location.href = fwa.config.baseUrl;
+            }
+
+            window.addEventListener('online', updateOnlineStatus);
+        }
+    </script>
+</head>
+<body>
+    <div>Error</div>
+</body>
+</html>

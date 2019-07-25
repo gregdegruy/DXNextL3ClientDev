@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="css/default.css" rel="stylesheet" />
+    <link href="css/webview.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.1.0/js/base.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/winjs/4.1.0/js/ui.js"></script>
+
+    <script src="js/windows-options.js"></script>
+    <script src="js/windows.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <div class="splitView" data-win-control="WinJS.UI.SplitView">
+            <!-- Split View -->
+            <div>
+                <div class="header">
+                    <button class="win-splitviewpanetoggle"
+                            data-win-control="WinJS.UI.SplitViewPaneToggle"
+                            data-win-options="{ splitView: select('.splitView') }"></button>
+                    <div class="title">
+                        <img class="houzz-brand-logo" src="images/BrandIcon.png" alt="Houzz" />
+                    </div>
+                </div>
+
+                <!-- Menu -->
+                <div class="nav-commands" style="overflow-y: scroll; height: 90%">
+                    <div onclick="document.getElementById('webview').navigate('http://www.houzz.com/photos/bath');"
+                         data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'BATH', icon: 'url(\'images/split_view_icons/bath.png\')'}"></div>
+                    <div onclick="document.getElementById('webview').navigate('http://www.houzz.com/photos/bedroom');"
+                         data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'BEDROOM', icon: 'url(\'images/split_view_icons/bedroom.png\')'}"></div>
+                    <div onclick="document.getElementById('webview').navigate('http://www.houzz.com/photos/living');"
+                         data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'LIVING', icon: 'url(\'images/split_view_icons/living.png\')'}"></div>
+                    <div onclick="document.getElementById('webview').navigate('http://www.houzz.com/photos/outdoor');"
+                         data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'OUTDOOR', icon: 'url(\'images/split_view_icons/outdoor.png\')'}"></div>
+                    <div onclick="document.getElementById('webview').navigate('http://www.houzz.com/photos/lighting');"
+                         data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'LIGHTING', icon: 'url(\'images/split_view_icons/lighting.png\')'}"></div>
+                    <div onclick="document.getElementById('webview').navigate('http://www.houzz.com/photos/decor');"
+                         data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'DECOR', icon: 'url(\'images/split_view_icons/decor.png\')'}"></div>
+                    
+                    <div onclick="document.getElementById('webview').navigate('http://www.houzz.com/photos/stories');"
+                         data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'STORIES', icon: 'library'}"></div>
+                    <div onclick="document.getElementById('webview').navigate('http://www.houzz.com/photos/advice');"
+                         data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'ADVICE', icon: 'otheruser'}"></div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="contenttext">
+                <x-ms-webview id="webview" src="http://houzzuwp.ngrok.io/"></x-ms-webview>
+                <div id="extendedSplashScreen" class="extendedSplashScreen hidden">
+                    <img id="extendedSplashImage" src="ms-appx-web:////images/SplashScreen.scale-200.png" style="position: absolute;" />
+                    <div class="loadingBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        WinJS.Namespace.define("Sample", {
+            mode: {
+                small: {
+                    name: 'small',
+                    openedDisplayMode: WinJS.UI.SplitView.OpenedDisplayMode.overlay,
+                    closedDisplayMode: WinJS.UI.SplitView.ClosedDisplayMode.none,
+                },
+                medium: {
+                    name: 'medium',
+                    openedDisplayMode: WinJS.UI.SplitView.OpenedDisplayMode.overlay,
+                    closedDisplayMode: WinJS.UI.SplitView.ClosedDisplayMode.inline,
+                },
+                large: {
+                    name: 'large',
+                    openedDisplayMode: WinJS.UI.SplitView.OpenedDisplayMode.inline,
+                    closedDisplayMode: WinJS.UI.SplitView.ClosedDisplayMode.inline,
+                }
+            },
+            splitView: null,
+            updateSplitView: function (size) {
+                // Remove all the size classes
+                Object.keys(Sample.mode).forEach(function (key) {
+                    WinJS.Utilities.removeClass(Sample.host, Sample.mode[key].name);
+                });
+
+                // Update the SplitView based on the size
+                Sample.splitView.openedDisplayMode = Sample.mode[size].openedDisplayMode;
+                Sample.splitView.closedDisplayMode = Sample.mode[size].closedDisplayMode;
+
+                // Add the size class
+                WinJS.Utilities.addClass(Sample.host, size);
+            }
+        });
+
+        WinJS.Binding.processAll(null, Sample).then(function () {
+            WinJS.UI.processAll().done(function () {
+                Sample.splitView = document.querySelector(".splitView").winControl;
+                Sample.host = document.querySelector("#app");
+
+                // Temporary workaround: Draw keyboard focus visuals on NavBarCommands
+                new WinJS.UI._WinKeyboard(Sample.splitView.paneElement);
+            });
+        })
+    </script>
+</body>
+</html>

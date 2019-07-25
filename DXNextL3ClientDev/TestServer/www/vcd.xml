@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+
+  <CommandSet xml:lang="en-us" Name="examplevcd">
+    <CommandPrefix>Test App</CommandPrefix>
+    <Example>Go to Home</Example>
+
+    <Command Name="navigation">
+      <Example>Go to Home</Example>
+      <ListenFor RequireAppName="BeforePhrase">go [to] {navItems}</ListenFor>
+      <Feedback>Navigating to {navItems}</Feedback>
+      <Navigate/>
+    </Command>
+
+    <Command Name="search">
+      <Example>Search for Stuff</Example>
+      <ListenFor RequireAppName="BeforePhrase">search [for] {searchTerm}</ListenFor>
+      <Feedback>Searching for {searchTerm}</Feedback>
+      <Navigate/>
+    </Command>
+
+    <PhraseList Label="navItems">
+    </PhraseList>
+
+    <PhraseTopic Label="searchTerm" Scenario="Search">
+    </PhraseTopic>
+
+  </CommandSet>
+</VoiceCommands>

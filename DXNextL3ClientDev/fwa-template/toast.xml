@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toast>
+  <visual version="1">
+    <binding template="ToastText04">
+      <text id="1">From a Remote File</text>
+      <text id="2">First body text from File</text>
+      <text id="3">Second body text</text>
+    </binding>
+  </visual>
+</toast>

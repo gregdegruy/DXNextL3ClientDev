@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="../js/windows-options.js"></script>
+    <script src="../js/windows.js"></script>
+
+</head>
+<body>
+    <div>Page Two</div>
+    <br />
+    <input type="button" onclick="FWA.Notifications.displayLocalToast({ toastFile: 'ms-appx:///toast.xml' })" value="Send Local Notification"/>
+    <input type="button" onclick="FWA.SecondaryTile.pin()" value="Pin Current Page" />
+    <br />
+    <canvas id="ink"></canvas>
+
+    <script>
+        FWA.Page.injectCSS({ customCSS: FWA.baseUrl + "/css/customStyles2.css" });
+        document.getElementById("ink").style.display = "block";
+    </script>
+</body>
+</html>

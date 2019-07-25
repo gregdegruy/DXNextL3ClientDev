@@ -1,0 +1,26 @@
+﻿li.header-nav-room.r-3.r-menu.menu-container,
+li.header-nav-room.r-4.r-menu.menu-container,
+li.header-nav-room.r-5.r-menu.menu-container,
+li.header-nav-room.r-6.r-menu.menu-container,
+li.header-nav-room.r-7.r-menu.menu-container,
+li.header-nav-room.r-8.r-menu.menu-container,
+li.header-nav-room.r-9.r-menu.menu-container,
+li.header-nav-room.r-10.r-main-right.menu-container,
+li.header-nav-room.r-11.r-main-right.menu-container,
+#homeSlideShow,
+.hp-visitor-block.container-fluid, 
+#footer-menu, #footer-menu.hide-footer, .hz-footer {
+    display: none !important;
+}
+
+#navHome {
+    margin-left: 8px !important;
+}
+
+#mainContent {
+    padding: 8px !important;
+}
+
+#stickyFooterActions {
+    bottom: 0px !important;
+}

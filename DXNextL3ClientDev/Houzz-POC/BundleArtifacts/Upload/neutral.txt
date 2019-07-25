@@ -1,0 +1,2 @@
+MainPackage=C:\Users\Jian Shen\Documents\GitHub\Houzz-POC\Houzz-POC\bin\Release\Upload\Houzz-POC_1.1.7.0_AnyCPU.appx
+ResourcePack=C:\Users\Jian Shen\Documents\GitHub\Houzz-POC\Houzz-POC\_scale-150.appx

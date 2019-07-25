@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="css/webview.css" rel="stylesheet" />
+
+    <script src="js/windows-options-webview.js"></script>
+    <script src="js/windows.js"></script>
+    <script src="js/offline.js"></script>
+
+</head>
+<body>
+    <x-ms-webview id="webview" src="https://www.github.com/personal"></x-ms-webview>
+    <div id="loading" align="center">
+        <progress id="loading-progress"></progress>
+    </div>
+    <canvas id="ink" Name="ink"></canvas>
+    <!-- If app is started while offline go to the msapp-error page -->
+    <script>
+        var webview = document.getElementById('webview')
+
+        if (!window.navigator.onLine) {
+            webview.navigate('ms-appx-web:///msapp-error.html')
+        };
+
+        FWA.BackButton.toggle = function () {
+            if (webview.src != FWA.BackButton.options.homeUrl && webview.src.indexOf('msapp-error.html') === -1) {
+                FWA.BackButton.show();
+            } else {
+                FWA.BackButton.hide();
+            }
+        };
+    </script> 
+</body>
+</html>
